@@ -1,0 +1,46 @@
+/* Animações e ajustes finos */
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+/* Transições suaves de opacidade ao trocar de tela */
+#stage-home, #stage-quiz, #stage-result {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.option-button.correct {
+    border-color: #10b981 !important;
+    background-color: #f0fdf4 !important;
+    box-shadow: 0 0 0 4px #dcfce7 !important;
+    z-index: 10;
+}
+
+.option-button.error {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+    z-index: 10;
+}
+
+.option-button.dimmed {
+    opacity: 0.4;
+    filter: grayscale(0.5);
+}
+
+#quiz-notification.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
